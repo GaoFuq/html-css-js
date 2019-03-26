@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2</title>
+	<script type="text/javascript" src="vue2.6.1.js"></script>
+</head>
+<body>
+	<h1>vue</h1>
+	
+	<div id="box">
+		测试：<div id="test">{{test}}</div>
+		{{fun()}}{{a}}
+	</div>
+	<script>
+		
+	
+	   	var app = new Vue({
+	   		// 确定作用范围。
+	   		el:'#box',// 确定作用范围。
+	   		data:{//给插值表达式{{变量名}}绑定数据。
+	   			test:'5556',//变量名:"值"
+	   			a:''//data里面也是声明变量的地方。
+	   		},
+	   		methods:{
+	   			fun:function(){
+	   				console.log('hello')
+	   			}
+	   		}
+	   	})
+	 //app.a="aaaaa";
+	console.log(app.$el === document.getElementById('box'));//true
+
+	</script>
+</body>
+</html>

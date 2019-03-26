@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>class和style绑定</title>
+	<style>
+		.color{
+			color:red;
+		}
+		.color2{
+			color:green;
+		}
+    </style>
+</head>
+<body>
+	
+	<div id='app'>
+	  <div v-bind:class='{color:true}'>hhhhhh</div><!-- 对象邦定 true或false控制样式显示与否，但是这个元素都会显示出来。-->
+	  <div v-bind:class='[activeClass]'>开垦开垦看看</div><!-- 数组邦定 ，数组里面是类名-->
+
+	  <div v-bind:style='{color:color}'>hhhhhh</div><!-- 对象邦定 true或false控制样式显示与否，但是这个元素都会显示出来。-->
+	  <div v-bind:style='[styleObj]'>开垦开垦看看</div><!-- 数组邦定 ，数组里面是类名-->
+
+	  <!-- v-bind:style='{css的属性名:属性值（在data里面定义）}' -->
+	</div>
+	<script src="vue2.6.1.js"></script>
+	<script>
+		var app = new Vue({
+			el:'#app',
+			data:{
+				activeClass:'color2',
+				color:'yellow',
+				styleObj:{
+					color:'pink',
+					
+				}
+			},
+			
+
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算属性</title>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>计算属性computed：分离模板语法中的复杂逻辑</li>
+			<li>computed在计算完后，会留有缓存，后面再次调用会直接调用缓存结果</li>
+			
+		</ul>
+	</div>
+
+	<div id="box">
+		{{reverseMsg}}{{reverseMsg}}{{reverseMsg}}
+	</div>
+
+	<script src="vue2.6.1.js"></script>
+	<script>
+		var app = new Vue({
+			el:'#box',
+			data:{
+				msg:'qwertyuiop你好'
+			},
+			computed:{
+				reverseMsg:function(){
+					console.log('调用了reverseMsg()')//因为计算属性会留有缓存，所以这里只会调用一次。
+					return this.msg.split('').reverse().join('');
+				}
+			}
+			/*methods:{
+				reverseMsg:function(){
+					console.log('调用了reverseMsg()')//方法函数没有缓存，会调用3次。
+					return this.msg.split('').reverse().join('');
+				}
+			}*/
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="vue2.6.1.js"></script>
+</head>
+<body>
+	<h1>vue</h1>
+	<header>
+		<a href="https://www.bootcdn.cn/" target="_blink">https://www.bootcdn.cn/</a><br>
+		找到vue。它的介绍就不提了。
+
+	</header>
+	<div id="app">
+		测试：<div id="test">{{test}}</div>
+		{{test}}
+	</div>
+	<script>
+		//原生dom
+		// var dom = document.getElementById('test');
+	 	// dom.innerHTML="hello";
+	   	
+	   	//vue操作
+	   	var app = new Vue({
+	   		//确定这个vue的对象在id=app的div范围内使用。
+	   		el:"#app",
+	   		data:{//给插值表达式{{变量名}}绑定数据，在这个范围内都可以使用。
+	   			test:"pppppp"//变量名：值；更改数据时，只需更改这里就可以了，不需操作dom。
+	   		}
+	   	})
+
+	</script>
+</body>
+</html>

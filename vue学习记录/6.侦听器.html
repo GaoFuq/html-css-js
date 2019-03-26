@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>侦听器</title>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>侦听器：观察响应数据的变动，用来处理响应数据开销比较大的时候或者数据变动是执行的是异步操作</li>
+			
+			
+		</ul>
+	</div>
+
+	<div id='app'>
+	  <input type="text" v-model='msg'><!-- 数据双向绑定 -->
+	  <button @click='submit'>提交</button><br>{{msg}}
+	  <ul>
+		<li v-for='item of list'>{{item}}</li>
+	  </ul>
+	</div>
+	<script src="vue2.6.1.js"></script>
+	<script>
+		var app = new Vue({
+			el:'#app',
+			data:{
+				msg:'',
+				list:[]
+			},
+			methods:{
+				submit:function(){
+					// console.log(this.msg)
+					this.list.push(this.msg);
+					this.msg='';
+				}
+			},
+			watch:{
+				list(){
+					console.log('list中有'+this.list.length+'条数据')
+				}
+			}
+
+		})
+	</script>
+</body>
+</html>
