@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>一个组件的 data 选项必须是一个函数，因此每个实例可以维护一份被返回对象的独立的拷贝。</p>
+	<p>组件必须先注册以便 Vue 能够识别</p>
+	<p>注册类型：全局注册和局部注册</p>
+	<ul>全局注册:取名字，接收传值，写模板 。
+		<li>Vue.component('my-component-name', {<br>
+  // ... options ... <br>
+})</li>
+	</ul>
+<ul>局部注册：写成一个对象，通过components关键字在根组件中注册。
+	<li><p>var cpName = {<br>
+		props:['item'],//组件的传值 <br>
+		template:`//template中只能有一个根元素
+		&lt;li v-for='item of list'>{{item}}&lt;/li&gt;`<br>
+	  }
+		</p>
+	</li>
+	<li>局部组件要在根组件中注册：<br>
+	 components:{ <br>
+		cpName <br>
+	}
+	</li>
+</ul>
+	<p>例如: Vue.component('cpName',{<br>
+		props:['item'],//组件的传值 <br>
+		template:`
+		&lt;li v-for='item of list'>{{item}}&lt;/li&gt;<br>
+	  })
+		`</p>
+<p>使用组件（模板） ：&lt;cp-name&gt;&lt;/cp-name&gt;</p>
+</body>
+</html>

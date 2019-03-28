@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue2.6.1.js"></script>
+	<script src="https://cdn.bootcss.com/vue-router/3.0.2/vue-router.js"></script>
+</head>
+<body>
+	<div id='app'>
+		<p>嵌套路由：通过children关键字来进行添加路由，实现多级路由</p>
+		<router-link to='/list'>list</router-link>
+		<router-view></router-view>
+
+	</div>
+
+	<script>
+
+			var r = new VueRouter({
+				routes:[
+					{
+						path:'/list',
+						component:{
+							template:`
+							<div>
+							list页
+								<router-link to='/one' append>one</router-link>
+								<router-view></router-view>
+							</div>`
+						},//append关键字，说明它是嵌套的路由
+						children:[
+							{
+								path:'/one',
+								component:{
+									template:`<div>one</div>`
+								}
+							}
+						]
+						
+					}
+				]
+			})
+			var app = new Vue({
+				el:'#app',
+				router:r,
+				
+			})
+	</script>
+</body>
+</html>

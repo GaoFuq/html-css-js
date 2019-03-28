@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue2.6.1.js"></script>
+	<script src="https://cdn.bootcss.com/vue-router/3.0.2/vue-router.js"></script>
+
+</head>
+<body>
+	<div id='app'>
+		<router-link to='/aaa'>index</router-link>
+		<router-link to='/list'>index2</router-link>
+		<router-view></router-view>
+		&lt;router-view&gt;这个标签用来渲染router的页面
+	</div>
+	<script>
+
+		var r = new VueRouter({//通过new实例化路由
+			routes:[//routers配置项 是一个数组，里面是多个路由对象
+				{
+					path:'/aaa',//指定一个路径名
+					component:{
+						template:`<div>router页面：首页 </div>`,
+					}
+				},
+				{
+					path:'/list',
+					component:{
+						template:`<div>router页面：list页 </div>`,
+					}
+				}
+			]
+		})
+		var app = new Vue({
+			el:'#app',
+			router:r//路由要在根组件中注册
+
+		})
+
+	</script>
+</body>
+</html>

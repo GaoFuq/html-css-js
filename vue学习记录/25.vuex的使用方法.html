@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/vuex/3.1.0/vuex.js"></script>
+	<script src="vue2.6.1.js"></script>
+	<script src="https://cdn.bootcss.com/vue-router/3.0.2/vue-router.js">
+</script>
+</head>
+<body>
+
+	<p>vuex是用来管理组件的公共数据，用来管理组件通信的插件</p>
+	<div id='app'>
+		{{this.$store.state.count}}
+		<button onclick='change()'>点我</button>
+		<button @click='cc'>点我vue</button>
+	</div>
+	<script>
+		var store = new Vuex.Store({//声明仓库
+			state:{//数据存储的地方
+				count:0
+			},
+			mutations:{//改变数据的方法区
+				increment(state){//在这里面写方法
+					state.count++
+				}
+			},
+			/*getters:{
+				//获取数据的方法
+			},
+			actions:{
+				//
+			}*/
+
+		})
+		store.commit('increment')//通过store.commit()方法来触发
+		//console.log(store.state.count)
+
+		var app = new Vue({
+			el:'#app',
+			store,
+			methods:{
+				cc:function(){
+					this.$store.state.count++;
+					
+				}
+			}
+			
+				
+		})
+		function change(){
+			alert('aa')
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="vue2.6.1.js"></script>
+</head>
+<body>
+	
+	
+	<div id="app">具名插槽
+		<kkk><h1>9999</h1></kkk>
+		<kkk><h1 slot=k>kkkk</h1></kkk>
+		<p>使用&lt;slot&gt;标签在组件的模板中开启一个插槽，可以在使用组件时，往里面插入数据。</p>
+		<p>给&lt;slot&gt;标签一个name='a_name'属性，使用组件时 给插入的内容写上slot='a_name'属性，即可将插入的内容绑定到对应的插槽。</p>
+	</div>
+
+	<div >作用域插槽
+		<hhh>
+			<template slot-scope='data'>
+				<div>{{data.msg}}</div>
+			</template>
+			
+		</hhh>
+	</div>
+	<script>
+		
+		Vue.component('kkk',{
+			template:`
+			<div>
+				<slot></slot>
+				<h2>5555</h2>
+				<slot name='k'></slot>
+			</div>
+				
+			`
+		})
+		
+		Vue.component('hhh',{
+			template:`
+			<div>
+				<slot :msg=msg></slot>
+			</div>
+				
+			`,
+			data(){
+				return {
+					msg:'hello'
+				}
+			}
+		})
+	   	
+
+	</script>
+</body>
+</html>

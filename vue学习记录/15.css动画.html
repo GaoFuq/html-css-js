@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="https://cdn.bootcss.com/animate.css/3.7.0/animate.css" rel="stylesheet">
+	<script src="vue2.6.1.js"></script>
+	<style>
+		#app{
+			width:300px;
+			margin: 50px auto;
+		}
+</style>
+</head>
+<body>
+	<div id='app'>
+		<transition 
+			enter-active-class='animated rollIn';
+			leave-active-class='animated rollOut'
+		>
+			<div v-show='show'>vue中使用css动画，必须用&lt;transition&gt;标签包裹要动画的元素</div>
+		</transition>
+		
+		<button @click='change'>click</button>
+	</div>
+	
+	<script>
+		var app = new Vue({
+			el:'#app',
+			data:{
+				show:true
+			},
+			methods:{
+				change:function(){
+					this.show = !this.show
+					alert('aa')
+				}
+			}
+		})
+	</script>
+</body>
+</html>

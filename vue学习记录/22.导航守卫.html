@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue2.6.1.js"></script>
+	<script src="https://cdn.bootcss.com/vue-router/3.0.2/vue-router.js"></script>
+
+</head>
+<body>
+	<div id='app'>
+		<router-link to='/index'>index</router-link>
+		<router-link to='/login'>login</router-link>
+		<router-link to='/user'>user</router-link>
+		<router-view></router-view>
+	</div>
+
+	<script>
+
+		var r = new VueRouter({
+			routes:[
+				{
+					path:'/index',
+					component:{
+						template:`<div>首页</div>`
+					}
+				},
+				{
+					path:'/login',
+					component:{
+						template:`<div>登陆页</div>`
+					}
+				},
+				{
+					path:'/user',
+					component:{
+						template:`<div>用户页</div>`
+					},
+
+					beforeEnter:(to,from,next)=>{//局部的的守卫
+						var login = false;
+						if(!login){
+							next('/login');
+						}else{
+							next();
+						}
+					
+				}),
+				}
+
+			]
+		})
+
+		/*r.beforeEach(function(to,from,next){//全局的守卫
+			var login = false;
+			if(!login && to.path === '/user'){
+				next('/login');
+			}else{
+				next();
+			}
+		})*/
+
+		var app = new Vue({
+			el:'#app',
+			router:r
+		})
+
+
+	</script>
+</body>
+</html>

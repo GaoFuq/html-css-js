@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue2.6.1.js"></script>
+	<script src="https://cdn.bootcss.com/vue-router/3.0.2/vue-router.js"></script>
+
+</head>
+<body>
+	<div id='app'>
+		<router-link to='/index'>index</router-link>
+		<router-link to='/login'>login</router-link>
+		<router-link to='/user'>user</router-link>
+		<router-view></router-view>
+		<p>路由元信息：meta属性</p>
+	</div>
+
+	<script>
+
+		var r = new VueRouter({
+			routes:[
+				{
+					path:'/index',
+					component:{
+						template:`<div>首页</div>`
+					}
+				},
+				{
+					path:'/login',
+					component:{
+						template:`<div>登陆页</div>`
+					}
+				},
+				{
+					path:'/user',
+					component:{
+						template:`<div>用户页</div>`
+					},
+					meta:{//元信息，需要单独进行管理的信息
+						flag:true
+					}
+/*
+					beforeEnter:(to,from,next)=>{//局部的的守卫
+						var login = false;
+						if(!login){
+							next('/login');
+						}else{
+							next();
+						}
+					
+				}),*/
+				}
+
+			]
+		})
+
+		r.beforeEach(function(to,from,next){//全局的守卫
+			var login = true;
+			//console.log(to.matched),每一个路由对象，它在路由中都叫做一个记录，这个记录被保存在to.matched的数组中，通过这个数组，可以找到meta的值 ，即  user页面的状态标志值 
+			if(!login && to.matched.some(function(item){
+				return item.meta.flag;
+			})){
+				next('/login');
+			}else{
+				next();
+			}
+		})
+
+		var app = new Vue({
+			el:'#app',
+			router:r
+		})
+
+
+	</script>
+</body>
+</html>

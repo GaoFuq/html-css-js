@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态路由</title>
+	<script src="vue2.6.1.js"></script>
+	<script src="https://cdn.bootcss.com/vue-router/3.0.2/vue-router.js"></script>
+
+</head>
+<body>
+	<div id='app'>
+		<router-link to='/aaa/kkk'>one</router-link>
+		<router-link to='/aaa/two'>two</router-link>
+		<router-link to='/sss/qmj'>sss</router-link>
+		<router-view></router-view>
+		<p>使用props的方式传值，可以解耦合，是组件得到复用 </p>
+	</div>
+	<script>
+
+		var pageId = {//这样写，模板可以得到复用 
+			template:`<div>router页面：{{item}}</div>`,
+			props:['item']
+		}
+		var r = new VueRouter({
+			routes:[
+				
+				{
+					path:'/aaa/:item',
+					
+					component:pageId,
+				
+					props:true//表示允许props这种传参的方式
+				},
+				{
+					path:'/sss/:item',
+					
+					component:pageId,//复用组件
+				
+					props:true//表示允许props这种传参的方式
+				},
+
+
+			]
+		})
+		var app = new Vue({
+			el:'#app',
+			router:r//路由要在根组件中注册
+
+		})
+
+	</script>
+</body>
+</html>

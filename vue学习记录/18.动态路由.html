@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态路由</title>
+	<script src="vue2.6.1.js"></script>
+	<script src="https://cdn.bootcss.com/vue-router/3.0.2/vue-router.js"></script>
+
+</head>
+<body>
+	<div id='app'>
+		<router-link to='/aaa/one'>one</router-link>
+		<router-link to='/aaa/two'>two</router-link>
+		<router-view></router-view>
+		<p>&lt;router-view&gt;这个标签用来渲染router的页面</p>
+		<p>动态路由：使用一个路由，匹配多个router-link</p>
+	</div>
+	<script>
+
+		var r = new VueRouter({//通过new实例化路由
+			routes:[//routers配置项 是一个数组，里面是多个路由对象
+				
+				{
+					path:'/aaa/:item',//:item  绑定一个item变量
+					//path:'*',匹配所有路径
+					//path:'aa-*',匹配以aa-开头的所有路径
+					//还可以通过正则表达式来匹配路径
+					component:{
+						template:`<div>router页面：{{$route.params.item}} </div>`,
+					}//item的所有值 都会以key-value的形式添加到$route.params里面
+				}
+			]
+		})
+		var app = new Vue({
+			el:'#app',
+			router:r//路由要在根组件中注册
+
+		})
+
+	</script>
+</body>
+</html>

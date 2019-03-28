@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/velocity/2.0.5/velocity.js"></script>
+	<script src="vue2.6.1.js"></script>
+	<style>
+		#app{
+			width:300px;
+			margin: 50px auto;
+		}
+</style>
+</head>
+<body>
+	<div id='app'>
+		<transition
+			@before-enter='before';
+			@enter='bbb';
+			@after-enter='aaa'
+		>
+			<div v-show='show'>vue中使用css动画，必须用&lt;transition&gt;标签包裹要动画的元素</div>
+		</transition>
+		
+		<button @click='change'>click</button>
+	</div>
+	
+	<script>
+		// 有bug
+		var app = new Vue({
+			el:'#app',
+			data:{
+				show:true
+			},
+			methods:{
+				change:function(){
+					this.show = !this.show
+				},
+				before:function(el){
+					el.style.opacity=0
+				},
+				bbb:function(el,done){
+					Velocity(
+						el,
+						{opacity:1},
+						{
+							duration:3000,
+							complate:done
+						}
+						)
+				},
+				aaa:function(){
+					alert('动画完成')
+				}
+			}
+		})
+	</script>
+</body>
+</html>

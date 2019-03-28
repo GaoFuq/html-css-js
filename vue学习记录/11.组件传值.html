@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件传值</title>
+</head>
+<body>
+	<b>组件传值：</b>就是组件之间的数据交互<br>
+	<ul>
+		<li>父子：v-bind 与 props</li>
+		<li>子父：$emit 与 $on</li>
+		<li>同级：公用bus.$on(事件名，处理事件的函数)</li>
+		<li>复杂：vuex</li>
+	</ul>
+
+	<div id='app' style="border: 1px solid #000;width: 200px">父传子
+		<son-component :msg='msg'></son-component><!-- :相当于v-bind -->	<!-- 7.使用局部组件 -->
+	
+	</div> <br><br>
+	<div id='app2' style="border: 1px solid #000;width: 200px">子传父
+		<!-- 要监听事件，才能传过去 @相当于v-on:-->
+		<child-component @child='accept'></child-component><br>
+		{{info}}
+	</div>
+	<script src="vue2.6.1.js"></script>
+	<script>
+
+		var sonComponent = {//3.创建局部（子）组件
+			props:['msg'],//4.接收数据（传值）
+			template:`<div>{{msg}}</div>`//5.写模板
+		}
+
+		var app = new Vue({//1.创建根组件
+			el:'#app',
+			data:{
+				msg:'hello,子组件'//2.要把msg传递给子组件
+			},
+			components:{//6.注册局部组件
+				sonComponent			
+			}
+		})
+
+// --------------------------------------------
+
+		var childComponent = {
+			template:`<button @click='send'>发送给父组件</button>`,
+			data(){//子组件的 data 选项必须是一个函数
+				return {
+					info:'hello 父组件'//要传递的数据
+				}
+			},
+			methods:{
+				send:function(){
+				//$emit(事件名称，要传递的数据)
+					this.$emit('child',this.info)//这里的名称不能用childInfo,会抱错，因为vue已经用了这个词。
+				}
+			}
+		}
+		var app2 = new Vue({
+			el:'#app2',
+			components:{
+				childComponent
+			},
+			data:{
+				info:'等待接收 '
+			},
+			methods:{
+				accept:function(info){
+					this.info=info
+				}
+			}
+
+		})
+
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态组件</title>
+	<style>
+	p{
+		font-size: 20px;
+	}
+</style>
+</head>
+<body>
+	<div id='app'>
+		<keep-alive>
+			<component :is='sex'></component>
+		</keep-alive>
+		<button @click='change'>切换</button>
+		<p>动态组件包含在同一个&lt;component&gt;标签中，</p>
+		<p>通过is属性的true or false来控制是否显示，</p>
+		<p>如果false则<b>删除</b>该节点，就不会显示该节点。</p>
+		<p>使用&lt;keep-alive&gt;标签包裹住&lt;component&gt;标签，可以使它里面的元素得到复用。</p>
+		<p>即：在boy或girl里面输入的内容，在切换后，会依然存在并显示。</p>
+	</div>
+
+	<script src="vue2.6.1.js"></script>
+	<script>
+		Vue.component('boyComponent',{
+			template:`
+			<div>
+				boy:<input type='text'/>
+			</div>`
+		})
+		Vue.component('girlComponent',{
+			template:`
+			<div>
+				girl:<input type='text'/>
+			</div>`
+		})
+		var app = new Vue({
+			el:'#app',
+			data:{
+				sex:'boyComponent'
+			},
+			methods:{
+				change:function(){
+					this.sex = 
+					this.sex ==='boyComponent' ? 'girlComponent':'boyComponent'
+				}
+			}
+		
+			
+		})
+
+
+	</script>
+</body>
+</html>

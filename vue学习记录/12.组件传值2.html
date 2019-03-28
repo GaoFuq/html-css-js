@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>同级传值</title>
+</head>
+<body>
+	<div id='app'>
+		<boy-component></boy-component><br><br>
+		<girl-component></girl-component>
+	</div>
+
+	<script src="vue2.6.1.js"></script>
+	<script>
+		var bus =new Vue();//同级组件传递数据用bus
+		
+
+		var boyComponent = {
+			template:`
+				<button @click='send'>我是boy组件，我要发消息给girl组件</button>`,
+				data(){
+					return {
+						info:'hi girl,I 是 boy'
+					}
+				},
+			methods:{
+				send:function(){
+					bus.$emit('send2girl',this.info)
+				}
+			}
+
+		}
+
+		var girlComponent = {
+			template:`
+				<div>{{msg}}</div>`,
+				data(){
+					return {
+						msg:'我是girl组件，我在等待接收消息'
+					}
+				},
+				created:function(){//使用钩子函数，让girl组件一旦被创建，就会监听bus.$on里面的事件
+					var me = this;//绑定this到girl组件？（疑问）
+					bus.$on('send2girl',function(info){
+						me.msg=info;//不能直接使用this(?)
+					})
+				},
+			
+			
+
+		}
+		var app = new Vue({//根组件要写在子组件后面（最后面），不然添加子组件会抱错，因为子组件尚未定义
+			el:'#app',
+			
+			components:{
+				boyComponent,
+				girlComponent
+			}
+			
+		})
+
+
+	</script>
+</body>
+</html>

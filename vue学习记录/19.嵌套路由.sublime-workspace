@@ -1,0 +1,292 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"com",
+				"component"
+			],
+			[
+				"vue",
+				"vue2.6.1.js"
+			],
+			[
+				"font",
+				"font-size\tproperty"
+			],
+			[
+				"gir",
+				"girlComponent"
+			],
+			[
+				"gi",
+				"girlComponent"
+			],
+			[
+				"boy",
+				"boyComponent"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"child",
+				"childInfo"
+			],
+			[
+				"pro",
+				"props"
+			],
+			[
+				"cons",
+				"console.log"
+			],
+			[
+				"this",
+				"this.msg"
+			],
+			[
+				"te",
+				"type\tAttr"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"钩子",
+				"钩子-生命周期"
+			],
+			[
+				"hea",
+				"header\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"open in b",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"colorpick",
+				"Color Picker"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package→安装插件"
+			],
+			[
+				"i",
+				"Package Control: Install Package→安装插件"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/E/kk/html-css-js/vue学习记录/18.动态路由.html",
+		"/E/kk/html-css-js/vue学习记录/15.css动画.html",
+		"/E/kk/html-css-js/vue学习记录/17.路由器.html",
+		"/E/kk/html-css-js/vue学习记录/16.js动画.html",
+		"/E/kk/html-css-js/vue学习记录/vue-router.js",
+		"/E/kk/html-css-js/vue学习记录/animate.js",
+		"/E/kk/html-css-js/vue学习记录/13.动态组件.html",
+		"/E/kk/html-css-js/vue学习记录/14.插槽.html",
+		"/E/kk/html-css-js/vue学习记录/animate.css",
+		"/E/kk/html-css-js/vue学习记录/10.组件.html",
+		"/E/kk/html-css-js/vue学习记录/12.组件传值2.html",
+		"/E/kk/html-css-js/vue学习记录/11.组件传值.html",
+		"/E/kk/html-css-js/vue学习记录/9.事件.html",
+		"/E/kk/html-css-js/vue学习记录/8.渲染.html",
+		"/E/kk/html-css-js/vue学习记录/7.class和style的绑定.html",
+		"/E/kk/html-css-js/vue学习记录/6.侦听器.html",
+		"/E/kk/html-css-js/vue学习记录/5.计算属性.html",
+		"/E/kk/html-css-js/vue学习记录/4.指令.html",
+		"/E/kk/html-css-js/vue学习记录/3.钩子-生命周期.html",
+		"/E/kk/html-css-js/vue学习记录/1.html",
+		"/E/kk/html-css-js/vue学习1.html",
+		"/E/kk/html-css-js/vue学习2.html",
+		"/D/html_jiaoc/Sublime_Text3_Stable_Build_3176_x64_Chs/Sublime Text/Data/Packages/Default/Preferences.sublime-settings",
+		"/E/kk/html-css-js/vue2.6.1.js",
+		"/E/kk/html-css-js/aa.html",
+		"/F/vue_demo/demo1.html",
+		"/D/html_jiaoc/Sublime_Text3_Stable_Build_3176_x64_Chs/Sublime Text/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/D/html_jiaoc/Sublime_Text3_Stable_Build_3176_x64_Chs/Sublime Text/Data/Packages/Default/Default (Windows).sublime-keymap",
+		"/D/html_jiaoc/Sublime_Text3_Stable_Build_3176_x64_Chs/Sublime Text/Data/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/D/html_jiaoc/Sublime_Text3_Stable_Build_3176_x64_Chs/Sublime Text/Data/Packages/User/MarkdownPreview.sublime-settings",
+		"/D/html_jiaoc/Sublime_Text3_Stable_Build_3176_x64_Chs/Sublime Text/Data/Packages/ColorPicker/ColorPicker.sublime-settings",
+		"/D/html_jiaoc/Sublime_Text3_Stable_Build_3176_x64_Chs/Sublime Text/Data/Packages/Emmet/Emmet.sublime-settings",
+		"/D/html_jiaoc/Sublime_Text3_Stable_Build_3176_x64_Chs/Sublime Text/1demo.html",
+		"/E/程序设计/Python/testproject/sublimetest.py",
+		"/D/Program Files (x86)/Sublime_Text3_Stable_Build_3176_x64_Chs/Sublime Text/Data/Packages/Default/Default (Windows).sublime-keymap",
+		"/D/Program Files (x86)/Sublime_Text3_Stable_Build_3176_x64_Chs/Sublime Text/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/D/Program Files (x86)/Sublime_Text3_Stable_Build_3176_x64_Chs/Sublime Text/Data/Packages/Default/Preferences.sublime-settings",
+		"/D/Program Files (x86)/Sublime_Text3_Stable_Build_3176_x64_Chs/Sublime Text/Data/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Ronales/Desktop/config.py",
+		"/D/Google_downloadFile/新建文件夹/Google_downloadFile - 快捷方式.lnk"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\t   \t\t\n",
+			"\t  \n",
+			"piker",
+			"color"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "19.嵌套路由.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 203.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
